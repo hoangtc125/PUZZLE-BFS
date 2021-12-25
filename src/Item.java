@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Item {
@@ -16,8 +17,10 @@ public class Item {
 		super();
 		this.value = value;
 		this.pos = pos;
-		this.button.setText(value);
-		this.button.setFont(new Font("Tahoma", Font.BOLD, 30));
+//		this.button.setText(value);
+
+		this.button.setIcon(new ImageIcon("C:\\Users\\ADMIN\\Pictures\\puzzle\\" + (value == " " ? 9 : value) + ".png"));
+		this.button.setFont(new Font("Tahoma", Font.BOLD, 60));
 		this.button.setBackground(Color.LIGHT_GRAY);
 	}
 	

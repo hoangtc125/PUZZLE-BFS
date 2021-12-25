@@ -9,7 +9,7 @@ public class BFS {
 	private Queue<String> queue = new LinkedList<String>(), close = new LinkedList<String>();
 	private String des = "12345678 ";
 	
-	public BFS(ArrayList<Item> items) {
+	public BFS(ArrayList<Item> items) { 
 		super();
 		this.items = items;
 	}
@@ -64,7 +64,7 @@ public class BFS {
 				}
 			}
 			close.offer(string);
-			System.out.println(string);
+			System.out.println(close.size());
 		}
 		path.add(des);
 		for(int i = maps.size() - 1; i >= 0; i--) {
@@ -77,9 +77,15 @@ public class BFS {
 
 	public ArrayList<String> getPath() {
 		ArrayList<String> pathRev = new ArrayList<String>();
-		for(int i = path.size() - 2; i >= 0; i--) {
+		for(int i = path.size() - 1; i >= 0; i--) {
 			pathRev.add(path.get(i));
 		}
 		return pathRev;
 	}
+
+	public Queue<String> getClose() {
+		return close;
+	}
+	
+	
 }
